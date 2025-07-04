@@ -1,0 +1,708 @@
+/* Ensure the sidebar is always full height */
+body{
+        position: relative;
+    min-height: 100%;
+    transition-property: background-color;
+    transition-duration: var(--chakra-transition-duration-normal);
+    line-height: var(--chakra-lineHeights-base);
+    background-image: url(/public/background-body-admin.webp);
+    background-size: cover;
+    background-position: center center;
+}
+#sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%);
+    backdrop-filter: blur(10px);
+    transition: 0.2s linear;
+}
+
+#loginPage {
+    background: linear-gradient(159.02deg, rgb(15, 18, 59) 14.25%, rgb(9, 13, 46) 56.45%, rgb(2, 5, 21) 86.14%) center center / cover;
+}
+
+#sidebar a,
+#sidebar span,
+#sidebar p,
+#sidebar svg {
+    color: #fff !important;
+    fill: #fff !important;
+}
+
+/* Optional: Make sure the parent flex container also stretches */
+#dashboardPage > .flex {
+    min-height: 100vh;
+} 
+
+
+.flex-1 header.bg-white{
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%);
+    backdrop-filter: blur(10px);
+    transition: 0.2s linear;
+}
+
+#dashboardPage, #dashboardPage * {
+    color: #fff !important;
+}
+
+.card-hover, .bg-white.rounded-xl {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
+}
+
+.card-hover h3, .card-hover p,
+.bg-white.rounded-xl h2, .bg-white.rounded-xl p, .bg-white.rounded-xl span, .bg-white.rounded-xl div {
+    color: #fff !important;
+}
+
+th, td, h1, h2, h3, h4, h5, h6, p, span, label, input, select, button {
+    color: #fff !important;
+}
+
+.bg-white, .border-gray-200, .text-gray-800, .text-gray-600, .text-gray-500 {
+    background: transparent !important;
+    border-color: rgba(255,255,255,0.08) !important;
+    color: #fff !important;
+}
+
+input, select, textarea {
+    background: rgb(15, 21, 53) !important;
+    color: #fff !important;
+    border-color: rgba(255,255,255,0.12) !important;
+}
+
+input:focus, select:focus, textarea:focus,
+input:active, select:active, textarea:active {
+    background: rgb(15, 21, 53) !important;
+    color: #fff !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #b0b8d1 !important;
+    opacity: 1;
+}
+
+/* Autofill fix for Chrome */
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgb(15, 21, 53) inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff !important;
+}
+
+/* Status Button Styles */
+.status-btn {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff !important;
+    background: rgba(15, 21, 53, 0.85);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+    transition: background 0.2s;
+}
+.status-btn.pending {
+    background: rgba(251, 191, 36, 0.85); /* yellow-400 */
+    color: #fff !important;
+}
+.status-btn.in-progress {
+    background: rgba(59, 130, 246, 0.85); /* blue-500 */
+    color: #fff !important;
+}
+.status-btn.completed {
+    background: rgba(34, 197, 94, 0.85); /* green-500 */
+    color: #fff !important;
+}
+
+#sidebar nav {
+    display: block;
+}
+#sidebar nav a.sidebar-link {
+    display: block;
+    width: 100%;
+    padding: 12px 24px;
+    margin-bottom: 4px;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+#sidebar nav a.sidebar-link.active,
+#sidebar nav a.sidebar-link:hover {
+    background: rgba(59, 130, 246, 0.15);
+}
+
+/* Order Form Specific Styles */
+.platform-option {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.platform-option:hover {
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.95) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+}
+
+.platform-option.border-indigo-500 {
+    border-color: rgba(99, 102, 241, 0.8) !important;
+    background: linear-gradient(111.84deg, rgba(99, 102, 241, 0.15) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.2);
+}
+
+.service-option {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255, 0.08) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.service-option:hover {
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.95) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+}
+
+.service-option.border-indigo-500 {
+    border-color: rgba(99, 102, 241, 0.8) !important;
+    background: linear-gradient(111.84deg, rgba(99, 102, 241, 0.15) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    box-shadow: 0 2px 10px rgba(99, 102, 241, 0.2);
+}
+
+/* Quantity controls */
+#decreaseQuantity, #increaseQuantity {
+    background: rgba(15, 21, 53, 0.8) !important;
+    color: #fff !important;
+    border: none !important;
+    transition: all 0.2s ease;
+}
+
+#decreaseQuantity:hover, #increaseQuantity:hover {
+    background: rgba(99, 102, 241, 0.8) !important;
+    color: #fff !important;
+}
+
+/* Order Summary */
+#orderSummary {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: #fff !important;
+}
+
+/* Success Modal */
+.fixed.inset-0 {
+    backdrop-filter: blur(8px);
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .platform-option, .service-option {
+        padding: 12px !important;
+    }
+    
+    .platform-option .text-2xl {
+        font-size: 24px !important;
+    }
+    
+    .service-option .text-lg {
+        font-size: 16px !important;
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 1024px) {
+    /* Header adjustments */
+    header {
+        padding: 0 16px;
+    }
+
+    /* Sidebar adjustments for tablet */
+    #sidebar {
+        transform: translateX(-100%);
+        z-index: 50;
+    }
+    
+    #sidebar.show {
+        transform: translateX(0);
+    }
+    
+    /* Main content adjustments */
+    .flex-1 {
+        margin-left: 0;
+    }
+    
+    /* Header adjustments */
+    header .flex-1 {
+        flex: none;
+        width: auto;
+    }
+    
+    /* Search bar adjustments */
+    .max-w-lg {
+        max-width: 200px;
+    }
+    
+    /* Stats cards adjustments */
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Settings layout adjustments */
+    .lg\:grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .lg\:col-span-1 {
+        grid-column: span 1;
+    }
+    
+    .lg\:col-span-2 {
+        grid-column: span 1;
+    }
+    
+    .lg\:col-span-3 {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile-specific adjustments */
+    
+    /* Body and container adjustments */
+    body {
+        font-size: 14px;
+    }
+    
+    /* Login page adjustments */
+    #loginPage {
+        padding: 16px;
+    }
+    
+    #loginPage .max-w-md {
+        max-width: 100%;
+    }
+    
+    /* Header adjustments */
+    header {
+        padding: 0 16px;
+    }
+    
+    header .h-16 {
+        height: 60px;
+    }
+    
+    /* Search bar hide on mobile */
+    .max-w-lg {
+        display: none;
+    }
+    
+    /* Main content padding */
+    #pageContent {
+        padding: 16px;
+    }
+    
+    /* Dashboard header */
+    .mb-8 h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    
+    .mb-8 p {
+        font-size: 14px;
+    }
+    
+    /* Stats cards - single column on mobile */
+    .grid-cols-4 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Card adjustments */
+    .card-hover, .bg-white.rounded-xl {
+        padding: 16px;
+    }
+    
+    /* Table adjustments */
+    .overflow-x-auto {
+        font-size: 12px;
+    }
+    
+    .px-6.py-3 {
+        padding: 8px 12px;
+    }
+    
+    .px-6.py-4 {
+        padding: 12px;
+    }
+    
+    /* Order form adjustments */
+    .grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-cols-1.md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Game options grid */
+    .grid-cols-2.md\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    /* Service options */
+    .service-option {
+        padding: 12px;
+    }
+    
+    /* Settings page adjustments */
+    .settings-nav-btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .settings-nav-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Profile picture adjustments */
+    .w-20.h-20 {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .w-10.h-10 {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Form adjustments */
+    input, select, textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    /* Buttons */
+    button {
+        font-size: 14px;
+    }
+    
+    /* Switch adjustments */
+    .switch {
+        width: 44px;
+        height: 24px;
+    }
+    
+    .slider:before {
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        top: 2.5px;
+    }
+    
+    .switch input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+    
+    /* Modal adjustments */
+    .fixed.inset-0 .bg-white {
+        margin: 16px;
+        padding: 24px;
+    }
+    
+    /* Success/Error messages */
+    .fixed.top-4.right-4 {
+        top: 16px;
+        right: 16px;
+        left: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small mobile adjustments */
+    
+    /* Login page */
+    #loginPage h1 {
+        font-size: 28px;
+    }
+    
+    /* Dashboard header */
+    .mb-8 h1 {
+        font-size: 24px;
+    }
+    
+    /* Stats cards */
+    .text-2xl {
+        font-size: 20px;
+    }
+    
+    /* Game options - single column */
+    .grid-cols-2.md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Service options */
+    .service-option .text-lg {
+        font-size: 14px;
+    }
+    
+    /* Settings navigation */
+    .settings-nav-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    /* Form spacing */
+    .space-y-6 > * + * {
+        margin-top: 16px;
+    }
+    
+    /* Table text */
+    .text-sm {
+        font-size: 11px;
+    }
+    
+    /* Buttons */
+    button {
+        font-size: 13px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Login page */
+    #loginPage {
+        min-height: 100vh;
+        padding: 8px;
+    }
+    
+    /* Dashboard content */
+    #pageContent {
+        padding: 8px;
+    }
+    
+    /* Stats cards */
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Ensure crisp rendering on retina displays */
+    .slider:before {
+        transform: translateZ(0);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .settings-nav-btn {
+        min-height: 44px;
+    }
+    
+    button {
+        min-height: 44px;
+    }
+    
+    .switch {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card-hover:hover {
+        transform: none;
+    }
+    
+    .platform-option:hover,
+    .service-option:hover {
+        transform: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    #sidebar,
+    header,
+    .bg-white.rounded-xl {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* Settings Page Styles */
+.settings-nav-btn {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: #fff !important;
+    transition: all 0.3s ease;
+}
+
+.settings-nav-btn:hover {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.95) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+}
+
+.settings-nav-btn.active {
+    background: linear-gradient(111.84deg, rgba(99, 102, 241, 0.15) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    border-color: rgba(99, 102, 241, 0.8) !important;
+    box-shadow: 0 2px 10px rgba(99, 102, 241, 0.2);
+}
+
+/* Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1.5px solid rgba(99, 102, 241, 0.3);
+  border-radius: 9999px;
+  transition: background 0.3s, border 0.3s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 2.5px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
+  transition: transform 0.3s, background 0.3s;
+}
+.switch input:checked + .slider {
+  background: rgba(99, 102, 241, 0.8);
+  border-color: rgba(99, 102, 241, 1);
+}
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+  background: #fff;
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+.slider:active:before {
+  width: 20px;
+}
+
+/* For dark backgrounds */
+.switch .slider {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+}
+
+/* Settings Section Transitions */
+.settings-section {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Profile Picture Upload */
+.w-20.h-20.bg-indigo-100 {
+    background: linear-gradient(111.84deg, rgba(99, 102, 241, 0.15) 59.3%, rgba(26, 31, 55, 0.8) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Account Balance Display */
+.text-3xl.font-bold.text-indigo-600 {
+    color: rgba(99, 102, 241, 0.9) !important;
+}
+
+/* Payment Method Cards */
+.p-4.bg-gray-50 {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Transaction History */
+.p-3.bg-gray-50 {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.85) 59.3%, rgba(26, 31, 55, 0.6) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Session Status Indicators */
+.w-3.h-3.bg-green-500 {
+    background-color: rgba(34, 197, 94, 0.8) !important;
+}
+
+.w-3.h-3.bg-gray-400 {
+    background-color: rgba(156, 163, 175, 0.8) !important;
+}
+
+/* Success/Error Messages */
+.fixed.top-4.right-4 {
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* Add Funds Modal */
+.fixed.inset-0 .bg-white {
+    background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.95) 59.3%, rgba(26, 31, 55, 0.9) 100%) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: #000 !important;
+}
+
+.fixed.inset-0 .bg-white h2,
+.fixed.inset-0 .bg-white p,
+.fixed.inset-0 .bg-white label,
+.fixed.inset-0 .bg-white span {
+    color: #000 !important;
+}
+
+/* Settings Form Validation */
+input:invalid, select:invalid, textarea:invalid {
+    border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+input:valid, select:valid, textarea:valid {
+    border-color: rgba(34, 197, 94, 0.5) !important;
+}
